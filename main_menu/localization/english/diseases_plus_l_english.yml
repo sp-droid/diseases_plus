@@ -1,0 +1,27 @@
+﻿l_english:
+ # Change of bubonic plague to plague
+ bubonic_plague: "Plague"
+ local_bubonic_plague_impact_modifier: "Plague location modifier"
+ MODIFIER_TYPE_NAME_local_bubonic_plague_impact_modifier: "Plague Impact"
+ MODIFIER_TYPE_DESC_local_bubonic_plague_impact_modifier: "How much the plague outbreak affects [locations|e]."
+
+ # Change of great pestilence to enteric fever
+ great_pestilence: "Enteric Fever"
+ great_pestilence_desc: "Also called Typhoid or Paratyphoid, this disease spreads through foul water and food. Victims suffer prolonged fever, severe weakness, abdominal pain, and wasting, sometimes leading to fatal complications. It strikes hardest in crowded towns and camps with poor sanitation."
+ local_great_pestilence_impact_modifier: "Enteric Fever location modifier"
+ MODIFIER_TYPE_NAME_local_great_pestilence_impact_modifier: "Enteric Fever Impact"
+ MODIFIER_TYPE_DESC_local_great_pestilence_impact_modifier: "How much the enteric fever outbreak affects [locations|e]."
+
+ # Partial immunity modifiers
+ STATIC_MODIFIER_NAME_partial_immunity_influenza: "Partial immunity: influenza"
+ STATIC_MODIFIER_NAME_partial_immunity_plague: "Partial immunity: plague"
+ STATIC_MODIFIER_NAME_partial_immunity_enteric_fever: "Partial immunity: enteric fever"
+ STATIC_MODIFIER_NAME_partial_immunity_malaria: "Partial immunity: malaria"
+ STATIC_MODIFIER_NAME_partial_immunity_measles: "Partial immunity: measles"
+ STATIC_MODIFIER_NAME_partial_immunity_smallpox: "Partial immunity: smallpox"
+ STATIC_MODIFIER_NAME_partial_immunity_typhus: "Partial immunity: typhus"
+
+ # Events
+ diseases_plus.1.title: "Title"
+ diseases_plus.1.desc: "Description"
+ diseases_plus.1.a: "Option A"

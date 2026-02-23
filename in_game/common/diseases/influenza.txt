@@ -95,18 +95,7 @@
 	#script value for how much chance there is of the disease stagnating in a location, 
 	#slowing its advance greatly. (0..1)
 	location_stagnation_chance = {
-		if = {
-			limit = {
-				"disease_presence(scope:disease)" > 0.05
-			}
-			value = "distance_to_squared(scope:disease.origin)"
-			multiply = 0.0006
-			multiply = 0.005
-		}
-		else = {
-			value = "distance_to_squared(scope:disease.origin)"
-			multiply = 0.00006
-		}
+		value = 0.1
 	}
 
 	#script value for how many of the affected should have their fate decided (live and become resistant, or die) 
@@ -123,8 +112,8 @@
 
 	#script value for mortality rate of the disease (0..1)
 	#the flu kills around 100 people per 100,000
-	mortality_rate = { 
-		value = 0.001
+	mortality_rate = {
+		0.01 0.03
 	}
 
 	#script value for how likely it is that a character will die per calc interval (0..1)

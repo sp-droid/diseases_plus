@@ -1,0 +1,48 @@
+﻿partial_immunity_influenza = {
+    game_data = {
+        category = location
+    }
+    local_influenza_impact_modifier = 1
+}
+
+partial_immunity_plague = {
+    game_data = {
+        category = location
+    }
+    local_bubonic_plague_impact_modifier = 1
+}
+
+partial_immunity_enteric_fever = {
+    game_data = {
+        category = location
+    }
+    local_great_pestilence_impact_modifier = 1
+}
+
+partial_immunity_malaria = {
+    game_data = {
+        category = location
+    }
+    local_malaria_impact_modifier = 1
+}
+
+partial_immunity_measles = {
+    game_data = {
+        category = location
+    }
+    local_measles_impact_modifier = 1
+}
+
+partial_immunity_smallpox = {
+    game_data = {
+        category = location
+    }
+    local_smallpox_impact_modifier = 1
+}
+
+partial_immunity_typhus = {
+    game_data = {
+        category = location
+    }
+    local_typhus_impact_modifier = 1
+}

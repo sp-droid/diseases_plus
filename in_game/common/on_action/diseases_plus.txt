@@ -1,0 +1,62 @@
+﻿on_game_start = {
+	on_actions = {
+		delay = { days =  1 }
+		diseases_plus_setup
+	}
+}
+
+diseases_plus_setup = {
+	# Trigger is not necessary because scope is none, happens once
+	trigger = {  }
+	# Set partial immunity at game start
+	effect = {
+		every_location_in_the_world = {
+			limit = {
+				has_owner = yes
+			}
+			set_variable = partial_immunity_influenza
+			add_location_modifier = {
+				modifier = partial_immunity_influenza
+				years = -1
+				mode = replace
+				size = -0.975
+			}
+		}
+	}
+}
+
+monthly_country_pulse  = {
+	on_actions = {
+		delay = { days = 14 }
+		diseases_plus_partial_immunity
+	}
+}
+
+# Checks partial immunity
+diseases_plus_partial_immunity = {
+	# Trigger is necessary otherwise it runs many times
+	trigger = {
+		owns = location:constantinople
+	}
+	effect = {
+		every_location_in_the_world = {
+			limit = {
+				has_any_disease_present = yes
+			}
+			if = {
+				limit = {
+					NOT = { has_variable = partial_immunity_influenza }
+					disease_presence = {
+						disease = disease:influenza
+						value > 0
+					}
+				}
+				set_variable = partial_immunity_influenza
+				trigger_event_silently = {
+					id = diseases_plus.2
+					days = 3
+				}
+			}
+		}
+	}
+}

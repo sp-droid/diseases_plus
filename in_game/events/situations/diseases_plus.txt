@@ -1,0 +1,62 @@
+﻿namespace = diseases_plus
+
+# Main test event
+diseases_plus.1 = {
+	type = country_event
+	category = situation_event	
+
+	title = diseases_plus.1.title
+	desc = diseases_plus.1.desc
+
+	# image = "gfx/interface/illustrations/situation/black_death.dds"
+	trigger = {
+		num_locations > 0
+		is_ai = no
+	}
+
+	immediate = {	
+		# every_owned_location = {
+		# 	limit = {
+		# 		disease_presence = { disease =scope:disease value > 0 }
+		# 	}
+		# 	save_scope_as = location_scope
+		# }
+	}
+
+	option = {
+		name = diseases_plus.1.a
+		# scope:location_scope ?= {
+			# change_prosperity = prosperity_extreme_penalty
+		# }
+		add_gold = 50
+		every_owned_location = {
+			add_location_modifier = {
+				modifier = partial_immunity_influenza
+				days = 100
+				mode = replace
+				size = -0.975
+			}
+		}
+	}
+}
+
+##############################
+###### Partial immunity ######
+##############################
+
+# Gives final partial immunity
+diseases_plus.2 = {
+	type = location_event
+	hidden = yes
+
+	title = diseases_plus.1.title
+
+	immediate = {
+		add_location_modifier = {
+			modifier = partial_immunity_influenza
+			years = -1
+			mode = replace
+			size = -0.975
+		}
+	}
+}
