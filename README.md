@@ -6,6 +6,7 @@ A mod to improve on the realism and satisfaction of EU5's disease system.
 
 * System overhaul: *removed America's great pestilence event, added partial immunity mechanic*. Diseases will naturally, through their intrinsic characteristics, ravage *any* territory with prior exposure, without an arbitrary predisposition for any region. 
 * Changes to core mechanics in mortality, resistance decay, propagation and endemic spots. Disease spread is no longer arbitrarily bound to be near their original outbreak location.
+* Disease local effects happen now with every disease (not just plague) with the only difference being their severity
 * New clearer colours for the different diseases
 * Naming: Great pestilence replaced with Enteric fever, Bubonic plague with Plague
 * Other changes
@@ -22,19 +23,19 @@ A mod to improve on the realism and satisfaction of EU5's disease system.
 * m: Yearly immunity loss modifier. Goes from 0 (100% lost in a year) to 1 (no loss).
 * interval: Province spread interval in days. How quickly it propagates geographically
 
-| Name          | Color | IFR\_naive % | p\_i\_eff % | r0            | HIT %     | m    | interval |
-| :------------ | :---- | :----------- | :---------- | :------------ | :-------- | :--- | :------- |
-| Influenza     | 🟦     | \[1-3\]      | 97.5 (0.05) | \[1.2-2.5\]   | \[16-66\] | 0.8  | 5        |
-| Measles       | 🟥     | \[20-30\]    | 80 (5)      | \[12-18\]     | \[92-94\] | 1.0  | 11       |
-| Enteric fever | 🟨     | \[10-30\]    | 95 (1)      | \[2-5\]       | 100\*\*   | 0.95 | 12       |
-| Typhus        | 🟪     | \[20-40\]    | 93.3 (2)    | \[1.5-3\]     | \[33-66\] | 0.98 | 30       |
-| Smallpox      | 🟫     | \[20-30\]    | 40 (15)     | \[3.5-6\]     | \[71-83\] | 1.0  | 12       |
-| Plague        | ⬛     | \[30-50\]*   | 75 (10)*    | \[1.5-1.9\]\* | 100\*\*   | 0.99 | 24       |
-| Malaria       | 🟩     | \[10-20\]    | 86.7 (2)    | 0             | 100\*\*   | 0.8  | \-       |
+| Name          | Color | IFR\_naive % | p\_i\_eff % | r0           | HIT %     | m    | interval |
+| :------------ | :---- | :----------- | :---------- | :----------- | :-------- | :--- | :------- |
+| Influenza     | 🟦     | \[1-3\]      | 97.5 (0.05) | \[1.2-2.5\]  | \[16-66\] | 0.8  | 5        |
+| Measles       | 🟥     | \[20-30\]    | 80 (5)      | \[12-18\]    | \[92-94\] | 1.0  | 11       |
+| Enteric fever | 🟨     | \[10-30\]    | 95 (1)      | \[2-5\]      | 100\*\*   | 0.95 | 12       |
+| Typhus        | 🟪     | \[20-40\]    | 93.3 (2)    | \[1.5-3\]    | \[33-66\] | 0.98 | 30       |
+| Smallpox      | 🟫     | \[20-30\]    | 40 (15)     | \[3.5-6\]    | \[71-83\] | 1.0  | 12       |
+| Plague        | ⬛     | \[30-50\]*   | 75 (10)*    | \[1.5-1.9\]* | 100\*\*   | 0.99 | 24       |
+| Malaria       | 🟩     | \[10-20\]    | 86.7 (2)    | 0            | 100\*\*   | 0.8  | \-       |
 
-\*: For the pneumonic variation of the disease, a +95% severity is applied, which means IFR_naive becomes \[57-95\] or \[35-58\] with partial immunity. This event happens when the disease presence (checked once every month) is:
+\*: For the pneumonic variation of the disease r0 is elevated by 85% to \[2.8-3.5\] and a +95% severity is applied, which means IFR_naive becomes \[57-95\] or \[35-58\] with partial immunity. Pneumonic plague happens when the disease presence (checked once every month) is:
 
-- Greater than 75% for rural settings
+- Greater than 75% for rural settings. 
 - Greater than 50% for towns
 - Greater than 25% for cities
 
