@@ -27,11 +27,11 @@ A mod to improve on the realism and satisfaction of EU5's disease system.
 | :------------ | :---- | :----------- | :---------- | :----------- | :-------- | :--- | :------- |
 | Influenza     | 🟦     | \[1-3\]      | 97.5 (0.05) | \[1.2-2.5\]  | \[16-66\] | 0.8  | 5        |
 | Measles       | 🟥     | \[20-30\]    | 80 (5)      | \[12-18\]    | \[92-94\] | 1.0  | 11       |
-| Enteric fever | 🟨     | \[10-30\]    | 95 (1)      | \[2-5\]      | 100\*\*   | 0.95 | 12       |
+| Enteric fever | 🟨     | \[10-30\]    | 95 (1)      | \[2-5\]      | 100\*\*   | 0.96 | 12       |
 | Typhus        | 🟪     | \[20-40\]    | 93.3 (2)    | \[1.5-3\]    | \[33-66\] | 0.98 | 30       |
 | Smallpox      | 🟫     | \[20-30\]    | 40 (15)     | \[3.5-6\]    | \[71-83\] | 1.0  | 12       |
 | Plague        | ⬛     | \[30-50\]*   | 75 (10)*    | \[1.5-1.9\]* | 100\*\*   | 0.99 | 24       |
-| Malaria       | 🟩     | \[10-20\]    | 86.7 (2)    | 0            | 100\*\*   | 0.8  | \-       |
+| Malaria       | 🟩     | \[10-20\]    | 86.7 (2)    | 0            | 100\*\*   | 0.9  | \-       |
 
 \*: For the pneumonic variation of the disease r0 is elevated by 85% to \[2.8-3.5\] and a +95% severity is applied, which means IFR_naive becomes \[57-95\] or \[35-58\] with partial immunity. Pneumonic plague happens when the disease presence (checked once every month) is:
 
@@ -43,7 +43,7 @@ A mod to improve on the realism and satisfaction of EU5's disease system.
 
 **Formulas:**
 
-* immunity\_(year i+1) / immunity\_(year i) = m / (1+k \* %pop\_growth)
+* immunity\_(year i+1) / immunity\_(year i) = m / (1+%pop\_birthrate(assumed constant, we can't access this game data)=0.36)
 * HIT = 1 - 1/r0
 
 ## Other
