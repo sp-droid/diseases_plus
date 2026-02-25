@@ -44,8 +44,37 @@ diseases_plus.1 = {
 ###### Partial immunity ######
 ##############################
 
-# Gives final partial immunity
 diseases_plus.2 = {
+	type = country_event
+	hidden = yes
+
+	title = diseases.1.title
+
+	immediate = {
+		every_location_in_the_world = {
+			limit = {
+				has_any_disease_present = yes
+			}
+			if = {
+				limit = {
+					NOT = { has_variable = partial_immunity_influenza }
+					disease_presence = {
+						disease = disease:influenza
+						value > 0
+					}
+				}
+				set_variable = partial_immunity_influenza
+				trigger_event_silently = {
+					id = diseases_plus.3
+					days = 3
+				}
+			}
+		}
+	}
+}
+
+# Gives final partial immunity
+diseases_plus.3 = {
 	type = location_event
 	hidden = yes
 

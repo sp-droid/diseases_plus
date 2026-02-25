@@ -13,6 +13,11 @@ diseases_plus_setup = {
 		every_location_in_the_world = {
 			limit = {
 				has_owner = yes
+				OR = {
+					continent = continent:europe
+					continent = continent:asia
+					continent = continent:africa
+				}
 			}
 			set_variable = partial_immunity_influenza
 			add_location_modifier = {
@@ -28,35 +33,18 @@ diseases_plus_setup = {
 monthly_country_pulse  = {
 	on_actions = {
 		delay = { days = 14 }
-		diseases_plus_partial_immunity
+		diseases_plus_monthly
 	}
 }
 
-# Checks partial immunity
-diseases_plus_partial_immunity = {
+
+diseases_plus_monthly = {
 	# Trigger is necessary otherwise it runs many times
 	trigger = {
 		owns = location:constantinople
 	}
-	effect = {
-		every_location_in_the_world = {
-			limit = {
-				has_any_disease_present = yes
-			}
-			if = {
-				limit = {
-					NOT = { has_variable = partial_immunity_influenza }
-					disease_presence = {
-						disease = disease:influenza
-						value > 0
-					}
-				}
-				set_variable = partial_immunity_influenza
-				trigger_event_silently = {
-					id = diseases_plus.2
-					days = 3
-				}
-			}
-		}
+	events = {
+		# Checks partial immunity
+		diseases_plus.2
 	}
 }
