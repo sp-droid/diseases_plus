@@ -33,6 +33,8 @@
 		}
 	}
 
+	monthly_resistance_reduction = 0.0018
+
 	spawn = {
 		#Has the Situation spawned already?
 		if = {

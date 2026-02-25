@@ -7,7 +7,7 @@
 	spawn = {
 	}
 
-	monthly_resistance_reduction = 0
+	monthly_resistance_reduction = 0.0043
 
 	r0 = { 
 		#doesn't pass from person to person
